@@ -1,13 +1,7 @@
 defmodule Yr2018.Day2 do
   @spec get_lines() :: list(String.t())
   def get_lines() do
-    content = Utils.Io.read_file(2018, 2)
-
-    if content == "" do
-      raise "Something went wrong with reading the file"
-    end
-
-    Utils.Io.readlines(content)
+    Utils.Io.readlines(2018, 2)
   end
 
   @spec get_frequencies(String.t()) :: map()

@@ -1,13 +1,7 @@
 defmodule Yr2018.Day1 do
   @spec get_frequencies() :: list(integer())
   def get_frequencies() do
-    content = Utils.Io.read_file(2018, 1)
-
-    if content == "" do
-      raise "Something went wrong with reading the file"
-    end
-
-    Utils.Io.readlines(content)
+    Utils.Io.readlines(2018, 1)
     |> Enum.map(fn x ->
       case Integer.parse(x) do
         {value, _rem} -> value

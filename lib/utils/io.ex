@@ -9,9 +9,9 @@ defmodule Utils.Io do
     end
   end
 
-  @spec readlines(String.t()) :: list(String.t())
-  def readlines(content) do
-    content
+  @spec readlines(integer(), integer()) :: list(String.t())
+  def readlines(year, day) do
+    read_file(year, day)
     |> String.split("\n", trim: true)
     |> Enum.filter(fn s -> String.length(s) > 0 end)
   end
