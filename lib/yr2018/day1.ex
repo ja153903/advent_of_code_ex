@@ -7,8 +7,7 @@ defmodule Yr2018.Day1 do
       raise "Something went wrong with reading the file"
     end
 
-    content
-    |> String.split("\n", trim: true)
+    Utils.Io.readlines(content)
     |> Enum.map(fn x ->
       case Integer.parse(x) do
         {value, _rem} -> value

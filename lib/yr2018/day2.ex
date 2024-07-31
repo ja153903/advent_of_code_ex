@@ -7,9 +7,7 @@ defmodule Yr2018.Day2 do
       raise "Something went wrong with reading the file"
     end
 
-    content
-    |> String.split("\n", trim: true)
-    |> Enum.filter(fn line -> String.length(line) > 0 end)
+    Utils.Io.readlines(content)
   end
 
   @spec get_frequencies(String.t()) :: map()

@@ -8,4 +8,11 @@ defmodule Utils.Io do
       {:error, :enoent} -> ""
     end
   end
+
+  @spec readlines(String.t()) :: list(String.t())
+  def readlines(content) do
+    content
+    |> String.split("\n", trim: true)
+    |> Enum.filter(fn s -> String.length(s) > 0 end)
+  end
 end
